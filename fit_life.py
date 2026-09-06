@@ -13,14 +13,12 @@ ML_FOR_L = 1000
 
 def calculate_bmi(weight, height):
     """Возвращает ИМТ."""
-    result = weight / (height ** 2)
-    return result
+    return weight / (height ** 2)
 
 
 def calculate_water(weight):
     """Возвращает небходимый объем воды."""
-    result = round(weight * WATER_PER_KG / ML_FOR_L, 1)
-    return result
+    return round(weight * WATER_PER_KG / ML_FOR_L, 1)
 
 
 # 1. Знакомство
