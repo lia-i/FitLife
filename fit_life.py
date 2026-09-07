@@ -19,12 +19,12 @@ def calculate_water(weight):
     return round(weight * WATER_PER_KG / ML_FOR_L, 1)
 
 
-def receive_data(name, type, description, err_text):
+def receive_data(name, data_type, description, err_text):
     """Обработка ошибок ввода параметров пользователя."""
     while True:
         value = input(f"Введите свой {name} {description}: ")
         try:
-            if type(value) <= 0:
+            if isinstance(value, data_type) and value <= 0:
                 raise LogicalError("{name} должен быть больше 0")
             else:
                 return type(value)
@@ -71,5 +71,5 @@ print(
     "\nВозраст: {user_age}."
     "\nВаш Индекс Массы Тела: {bmi:.1f}."
     "\nРекомендуемая норма воды: {water_needed} л. в день."
-    "\nРасчет окончен. Будьте здоровы!"
+    "\nРасчет окончен. Будьте здоровы!",
 )
